@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: movies-profile-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:9931/mydatabase"
+    username: myuser
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: "smtp.gmail.com"
+    port: 587
+    username: "gen.style23@gmail.com"
+    password: "tuxd zhbo pfof lnov"
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+
+server:
+  port: 0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: "http://localhost:8080/eureka"
+
+axon:
+  serializer:
+    general: jackson
+    events: jackson
+    messages: jackson
