@@ -19,7 +19,7 @@ public class ProfileConfirmationEmailTextCreator {
     }
 
     private URI createConfirmationLink(String id, String token) {
-        return UriComponentsBuilder.fromUriString(environmentUtils.getFullHostWithProtocol() + "/profiles/confirm")
+        return UriComponentsBuilder.fromUriString(environmentUtils.getFullHostWithProtocol() + "/profile/confirm")
                 .queryParam("id", id)
                 .queryParam("token", token)
                 .build().toUri();

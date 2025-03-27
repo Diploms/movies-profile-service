@@ -56,11 +56,14 @@ public class Profile {
     @CommandHandler
     private void handle(UpdateProfileCommand1 command) {
         apply(new ProfileUpdatedEvent1(command.id(), command.dto()));
-        apply(new ValidationTokenCreatedEvent1(command.id()));
     }
 
     @CommandHandler
     private void handle(ConfirmProfileCommand1 command) {
+        if (this.isConfirmed) {
+            throw new CommandExecutionException("Profile is already confirmed", new IllegalStateException());
+        }
+
         var actualTokenValue = this.confirmationToken.getToken();
         var expectedTokenValue = command.validationToken();
 
