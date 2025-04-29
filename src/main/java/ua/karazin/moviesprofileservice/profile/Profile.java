@@ -14,6 +14,7 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateMember;
 import org.axonframework.spring.stereotype.Aggregate;
+import ua.karazin.moviesbaseevents.moneyaccount.revision1.AccountCreatedEvent1;
 import ua.karazin.moviesbaseevents.profiles.revision1.*;
 
 import java.time.Instant;
