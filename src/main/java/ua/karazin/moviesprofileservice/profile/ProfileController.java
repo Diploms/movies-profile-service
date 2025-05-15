@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 public class ProfileController {
     private final ProfileCommandService profileCommandService;
 
-    @GetMapping("/confirm")
+    @PostMapping("/confirm")
     public CompletableFuture<ProfileDto1> confirmProfile(@RequestParam String id,
                                                          @RequestParam String token) {
         return profileCommandService.confirmProfile(id, token);
